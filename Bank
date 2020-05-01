@@ -12,14 +12,12 @@ public class Main
 	    int choice;
 	    int desposit;
 	    int withdraw;
+	    int accounttotransfer;
+	    int transfer;
+	    String options= "1 desposit, 2 transfer, 3 withdraw, 4 to print balance, 5 switch accounts, 6 to exit";
 		
-		System.out.println("Press 1 to desposit");
-        System.out.println("Press 2 to withdraw");
-        System.out.println("Press 3 to transfer money to another account");
-        System.out.println("Press 4 to print balance");
-        System.out.println("Press 5 to switch account");
-        System.out.println("Press 6 to exit");
-        
+		System.out.println(options);
+
         choice=z.nextInt();
         
         do{
@@ -32,7 +30,7 @@ public class Main
                         desposit=z.nextInt();
                         total=desposit+total;
                         System.out.println("Money in bank: "+total);
-                        System.out.println("1 desposit, 2 withdraw, 3 transfer, 4 to print balance, 5 switch accounts, 6 to exit");
+                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     if(account==2){
@@ -40,7 +38,7 @@ public class Main
                         desposit=z.nextInt();
                         total2=desposit+total2;
                         System.out.println("Money in bank: "+total2);
-                        System.out.println("1 desposit, 2 withdraw, 3 transfer, 4 to print balance, 5 switch accounts, 6 to exit");
+                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     if(account==3){
@@ -48,37 +46,67 @@ public class Main
                         desposit=z.nextInt();
                         total3=desposit+total3;
                         System.out.println("Money in bank: "+total3);
-                        System.out.println("1 desposit, 2 withdraw, 3 transfer, 4 to print balance, 5 switch accounts, 6 to exit");
+                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     desposit=0;
                     break;
                     
                 case 2:
+                    System.out.println("Which account would you like to transfer too");
+                    accounttotransfer=z.nextInt();
+                    System.out.println("How much would you like to transfer");
+                    transfer=z.nextInt();
+                    if(account==1 && accounttotransfer==2){
+                        total=total-transfer;
+                        total2=total2+transfer;
+                    }
+                    if(account==1 && accounttotransfer==3){
+                        total=total-transfer;
+                        total3=total3+transfer;
+                    }
+                    if(account==2 && accounttotransfer==1){
+                        total2=total2-transfer;
+                        total=total+transfer;
+                    }
+                    if(account==2 && accounttotransfer==3){
+                        total2=total2-transfer;
+                        total3=total3+transfer;
+                    }
+                    if(account==3 && accounttotransfer==1){
+                        total3=total3-transfer;
+                        total=total+transfer;
+                    }
+                    if(account==3 && accounttotransfer==2){
+                        total3=total3-transfer;
+                        total2=total2+transfer;
+                    }
                     
                 case 3:
+                    
+                    
                     
                 case 4:
                     if(account==1){
                         System.out.println("Money: "+ total);
-                        System.out.println("1 desposit, 2 withdraw, 3 transfer, 4 to print balance, 5 switch accounts, 6 to exit");
+                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     if(account==2){
                         System.out.println("Money: "+ total2);
-                        System.out.println("1 desposit, 2 withdraw, 3 transfer, 4 to print balance, 5 switch accounts, 6 to exit");
+                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     if(account==3){
                         System.out.println("Money: "+ total3);
-                        System.out.println("1 desposit, 2 withdraw, 3 transfer, 4 to print balance, 5 switch accounts, 6 to exit");
+                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     break;
                 case 5:
                     System.out.println("Enter integer 1-3 to change account");
                     account=z.nextInt();
-                    System.out.println("1 desposit, 2 withdraw, 3 transfer, 4 to print balance, 5 switch accounts, 6 to exit");
+                    System.out.println(options);
                     choice=z.nextInt();
                     break;
                 
@@ -86,8 +114,6 @@ public class Main
                     System.exit(0);
                     break;
                    
-                
-                
             }
         }
 		while(true);

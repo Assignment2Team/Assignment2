@@ -9,7 +9,7 @@ public class Main
 	    int total=0;
 	    int total2=0;
 	    int total3=0;
-	    int choice;
+	    int choice=5;
 	    int desposit;
 	    int withdraw;
 	    int accounttotransfer;
@@ -18,8 +18,6 @@ public class Main
 		
 		System.out.println(options);
 
-        choice=z.nextInt();
-        
         do{
             switch(choice){
                 case 1:
@@ -81,11 +79,11 @@ public class Main
                         total3=total3-transfer;
                         total2=total2+transfer;
                     }
+                    transfer=0;
+                    break;
                     
                 case 3:
-                    
-                    
-                    
+                
                 case 4:
                     if(account==1){
                         System.out.println("Money: "+ total);
@@ -113,7 +111,6 @@ public class Main
                 case 6:
                     System.exit(0);
                     break;
-                   
             }
         }
 		while(true);

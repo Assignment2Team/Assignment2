@@ -1,27 +1,25 @@
 import java.util.*;
 
-public class Accounts {
-    private String username;
-    private String password;
+public class Account {
     private int money;
     private int deposit;
     private int withdraw;
     
-    public Accounts (String username, String password, int money){
-        this.username = username;
-        this.password = password;
-        this.money = money;
+    public Accounts (int money, int deposit,int withdraw){
+        
+	this.money = money;
+	this.money = deposit;
+	this.money = withdraw;
     }
-    
-    public String getUserName(){
-        return username;
-     
+      
+    public int getMoney(){
+        return money;
     }
-    
-    public String getPassWord(){
-        return password;
+		
+    public int getMoney(){
+        return money;
     }
-    
+	
     public int getMoney(){
         return money;
     }
@@ -29,7 +27,16 @@ public class Accounts {
     public void setMoney(int newMoney){
         money = newMoney;
     }
+    
+    public void setDeposit(int newDeposit){
+        deposit = newDeposit;
+    }
+     public void setWithdraw(int newWithdraw){
+       withdraw = newWithdraw;
+    }
+        	
         
+	        
     @Override
     public String toString(){
         return "-------------------------------------" 

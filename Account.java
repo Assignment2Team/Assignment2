@@ -34,12 +34,12 @@ public class Accounts {
     public String toString(){
         return "-------------------------------------" 
                  
-                + "\nPlease select one of the options below "	 
+                 + "\nPlease select one of the options below "	 
 		 + "\nPress (1) to  deposit"
 		 + "\nPress (2) to transfer money"
-          	+"\nPress (3) to withdraw"  
-		+ "\nPress (3) to  print balance" 
-		 +"\nPress (3) to switch accounts"
+          	 +"\nPress (3) to withdraw"  
+		 + "\nPress (4) to  print balance" 
+		 +"\nPress (5) to switch accounts"
 		 +"\nPress (6) to exit";
                  
     }

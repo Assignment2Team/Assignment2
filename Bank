@@ -21,7 +21,27 @@ public class Main
 
         do{
             switch(choice){
-                case 1:
+	    	
+	    	 case 1:
+                    while(account>3 || account<0){
+                        System.out.println("Enter the password");
+                        inpassword=z.nextLine();
+                        if(inpassword.equals("Password")){
+                            account=1;
+                        }
+                        if(inpassword.equals("Password2")){
+                            account=2;
+                        }
+                        if(inpassword.equals("Password3")){
+                            account=3;
+                        }
+                    }
+                    System.out.println(options);
+                    choice=z.nextInt();
+                    break;
+                
+	    
+                case 2:
                     
                     if(account==1){
                         
@@ -51,7 +71,7 @@ public class Main
                     desposit=0;
                     break;
                     
-                case 2:
+                case 3:
                     System.out.println("Which account would you like to transfer too");
                     accounttotransfer=z.nextInt();
                     System.out.println("How much would you like to transfer");
@@ -83,9 +103,9 @@ public class Main
                     transfer=0;
                     break;
                     
-                case 3:
-                
                 case 4:
+                
+                case 5:
                     if(account==1){
                         System.out.println("Money: "+ total);
                         System.out.println(options);
@@ -102,24 +122,7 @@ public class Main
                         choice=z.nextInt();
                     }
                     break;
-                case 5:
-                    while(account>3 || account<0){
-                        System.out.println("Enter the password");
-                        inpassword=z.nextLine();
-                        if(inpassword.equals("Password")){
-                            account=1;
-                        }
-                        if(inpassword.equals("Password2")){
-                            account=2;
-                        }
-                        if(inpassword.equals("Password3")){
-                            account=3;
-                        }
-                    }
-                    System.out.println(options);
-                    choice=z.nextInt();
-                    break;
-                
+               
                 case 6:
                     System.exit(0);
                     break;

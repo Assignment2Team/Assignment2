@@ -5,7 +5,9 @@ public class Main
 	    
 	    Scanner z= new Scanner(System.in);
 	    
-	    int account=1;
+	    
+	    int inaccount;
+	    int account=4;
 	    int total=0;
 	    int total2=0;
 	    int total3=0;
@@ -14,9 +16,8 @@ public class Main
 	    int withdraw;
 	    int accounttotransfer;
 	    int transfer;
+	    String inpassword;
 	    String options= "1 desposit, 2 transfer, 3 withdraw, 4 to print balance, 5 switch accounts, 6 to exit";
-		
-		System.out.println(options);
 
         do{
             switch(choice){
@@ -102,8 +103,19 @@ public class Main
                     }
                     break;
                 case 5:
-                    System.out.println("Enter integer 1-3 to change account");
-                    account=z.nextInt();
+                    while(account>3 || account<0){
+                        System.out.println("Enter the password");
+                        inpassword=z.nextLine();
+                        if(inpassword.equals("Password")){
+                            account=1;
+                        }
+                        if(inpassword.equals("Password2")){
+                            account=2;
+                        }
+                        if(inpassword.equals("Password3")){
+                            account=3;
+                        }
+                    }
                     System.out.println(options);
                     choice=z.nextInt();
                     break;

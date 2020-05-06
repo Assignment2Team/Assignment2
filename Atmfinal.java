@@ -7,7 +7,7 @@
 import java.util.Scanner;
 
 /**
- *
+ * @author Uzair
  */
 public class Atmfinal {
 

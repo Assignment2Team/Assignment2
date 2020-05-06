@@ -17,7 +17,7 @@ public class Main
 	    int accounttotransfer;
 	    int transfer;
 	    String inpassword;
-	    String options= "1 desposit, 2 transfer, 3 withdraw, 4 to print balance, 5 switch accounts, 6 to exit";
+	    String options= "1 switch accounts, 2 desposit, 3 transfer, 4 withdraw, 5 print balance, 6 to exit";
 
         do{
             switch(choice){

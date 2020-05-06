@@ -1,15 +1,18 @@
 import java.util.*;
 
 public class Account {
+	
+    private String username;
+    private String password;	
     private int money;
     private int deposit;
     private int withdraw;
     
-    public Accounts (int money, int deposit,int withdraw){
+    public Accounts (String username, String password,int money){
         
+	this.username = username;
+        this.password = password;
 	this.money = money;
-	this.money = deposit;
-	this.money = withdraw;
     }
       
     public int getMoney(){
@@ -20,26 +23,22 @@ public class Account {
         return money;
     }
 	
-    public int getMoney(){
-        return money;
+    public void setMoney(int newMoney(){
+      mnoey = newMoney;
+    }
+	
+    public String getUserName(){
+    return username; 
     }
     
-    public void setMoney(int newMoney){
-        money = newMoney;
+    public String getPassWord(){
+        return password;
     }
-    
-    public void setDeposit(int newDeposit){
-        deposit = newDeposit;
-    }
-     public void setWithdraw(int newWithdraw){
-       withdraw = newWithdraw;
-    }
-        	
-        
+           
 	        
     @Override
     public String toString(){
-        return "-------------------------------------" 
+        return "*********************************************" 
                  
                  + "\nPlease select one of the options below "	 
 		 + "\nPress (1) to  deposit"

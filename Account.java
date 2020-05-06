@@ -18,7 +18,7 @@ public class Account {
     }
 		
 	
-    public void setMoney(int newMoney(){
+    public void setMoney(int newMoney){
       mnoey = newMoney;
     }
 	

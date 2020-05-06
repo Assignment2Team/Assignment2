@@ -2,15 +2,13 @@ import java.util.*;
 
 public class Account {
 	
-    private String username;
     private String password;	
     private int money;
     private int deposit;
     private int withdraw;
     
-    public Accounts (String username, String password,int money){
+    public Accounts (String password,int money){
         
-	this.username = username;
         this.password = password;
 	this.money = money;
     }
@@ -19,17 +17,11 @@ public class Account {
         return money;
     }
 		
-    public int getMoney(){
-        return money;
-    }
 	
     public void setMoney(int newMoney(){
       mnoey = newMoney;
     }
 	
-    public String getUserName(){
-    return username; 
-    }
     
     public String getPassWord(){
         return password;

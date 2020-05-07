@@ -45,7 +45,6 @@ public class Main
                     choice=z.nextInt();
                     break;
                 
-	    
                 case 2:
                     
                     if(account==1){
@@ -151,36 +150,14 @@ class Account {
         
         this.password = password;
 	    this.total = money;
-
     }
-      
     public int getMoney(){
         return total;
     }
-		
-	
     public void setMoney(int newMoney){
       total= newMoney;
     }
-	
-    
     public String getPassWord(){
         return password;
     }
-           
-	        
-    @Override
-    public String toString(){
-        return "*********************************************" 
-                 
-                 + "\nPlease select one of the options below "	 
-		 + "\nPress (1) to  deposit"
-		 + "\nPress (2) to transfer money"
-          	 +"\nPress (3) to withdraw"  
-		 + "\nPress (4) to  print balance" 
-		 +"\nPress (5) to switch accounts"
-		 +"\nPress (6) to exit";
-                 
-    }
-    
 }

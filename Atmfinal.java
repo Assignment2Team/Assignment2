@@ -16,10 +16,11 @@ public class Atmfinal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Accounts uzair = new Accounts("Ahmed",10000);
-        //Accounts dharmin = new Accounts("Patel",1000);
         
-
+        Account uzair = new Accounts("Ahmed",10000);
+        Account dharmin = new Accounts("Patel",1000);
+        Account arsh = new Accounts("Sansoe",1000);
+        
         Scanner sc = new Scanner(System.in);
        
         System.out.println("Please enter your password ");
@@ -33,7 +34,13 @@ public class Atmfinal {
         if (password.equals(uzair.getPassWord())) {
             System.out.println(uzair);
         }
+         if (password.equals(dharmin.getPassWord())) {
+            System.out.println(dharmin);
+         }
         
+        if (password.equals(arsh.getPassWord())) {
+            System.out.println(arsh);
+        }
             int choice = sc.nextInt();
             
             do {

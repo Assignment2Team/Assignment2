@@ -83,29 +83,32 @@ public class Main
                     accounttotransfer=z.nextInt();
                     System.out.println("How much would you like to transfer");
                     transfer=z.nextInt();
-                    if(account==1 && accounttotransfer==2 && transfer<=total){
+                    if(account==1 && accounttotransfer==2 && uzair.getMoney()>=transfer){
                         uzair.setMoney((uzair.getMoney()-transfer));
                         Dharmin.setMoney((Dharmin.getMoney()+transfer));
                     }
-                    if(account==1 && accounttotransfer==3 && transfer<=total){
+                    if(account==1 && accounttotransfer==3 && uzair.getMoney()>=transfer){
                         total=total-transfer;
                         total3=total3+transfer;
                     }
-                    if(account==2 && accounttotransfer==1 && transfer<=total2){
+                    if(account==2 && accounttotransfer==1 && Dharmin.getMoney()>=transfer){
                         total2=total2-transfer;
                         total=total+transfer;
                     }
-                    if(account==2 && accounttotransfer==3 && transfer<=total2){
+                    if(account==2 && accounttotransfer==3 && Dharmin.getMoney()>=transfer){
                         total2=total2-transfer;
                         total3=total3+transfer;
                     }
-                    if(account==3 && accounttotransfer==1 && transfer<=total3){
+                    if(account==3 && accounttotransfer==1 && Arshjit.getMoney()>=transfer){
                         total3=total3-transfer;
                         total=total+transfer;
                     }
-                    if(account==3 && accounttotransfer==2 && transfer<=total3){
+                    if(account==3 && accounttotransfer==2 && Arshjit.getMoney()>=transfer){
                         total3=total3-transfer;
                         total2=total2+transfer;
+                    }
+                    else{
+                        System.out.println("Invalid");
                     }
                     transfer=0;
                     System.out.println(options);
@@ -161,3 +164,4 @@ class Account {
         return password;
     }
 }
+

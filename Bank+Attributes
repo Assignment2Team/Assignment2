@@ -10,6 +10,9 @@ public class Main
 	    Account Dharmin = new Account("Dharmin",0);
 	    Account Arshjit = new Account("Arshjit",-10);
 	    
+	    System.out.println(uzair.toString());
+	    System.out.println(uzair.equals(Arshjit));
+	    
 	    int inaccount;
 	    int account=-1;
 	    int total=0;
@@ -164,4 +167,3 @@ class Account {
         return password;
     }
 }
-

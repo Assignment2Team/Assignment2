@@ -19,12 +19,12 @@ public class Main
 	    int total2=0;
 	    int total3=0;
 	    int choice=1;
-	    int desposit;
+	    int deposit;
 	    int withdraw;
 	    int accounttotransfer;
 	    int transfer;
 	    String inpassword="";
-	    String options= "1 switch accounts, 2 desposit, 3 transfer, 4 withdraw, 5 print balance, 6 to exit";
+	    String options= "1 switch accounts, 2 deposit, 3 transfer, 4 withdraw, 5 print balance, 6 to exit";
 
         do{
             switch(choice){
@@ -52,33 +52,33 @@ public class Main
                     
                     if(account==1){
                         
-                        System.out.println("Enter amount to desposit");
-                        desposit=z.nextInt();
-                        uzair.setMoney((desposit + uzair.getMoney()));
+                        System.out.println("Enter amount to deposit");
+                        deposit=z.nextInt();
+                        uzair.setMoney((deposit + uzair.getMoney()));
                         total = uzair.getMoney();
                         System.out.println("Money in bank " +total);
                         System.out.println(Arshjit);
                         choice=z.nextInt();
                     }
                     if(account==2){
-                        System.out.println("Enter amount to desposit");
-                        desposit=z.nextInt();
-                        Dharmin.setMoney((desposit + Dharmin.getMoney()));
+                        System.out.println("Enter amount to deposit");
+                        deposit=z.nextInt();
+                        Dharmin.setMoney((deposit + Dharmin.getMoney()));
                         total2 = Dharmin.getMoney();
                         System.out.println("Money in bank " +total2);
                         System.out.println(Arshjit);
                         choice=z.nextInt();
                     }
                     if(account==3){
-                        System.out.println("Enter amount to desposit");
-                        desposit=z.nextInt();
-                        Arshjit.setMoney((desposit + Arshjit.getMoney()));
+                        System.out.println("Enter amount to deposit");
+                        deposit=z.nextInt();
+                        Arshjit.setMoney((deposit + Arshjit.getMoney()));
                         total2 = Arshjit.getMoney();
                         System.out.println("Money in bank " +total3);
                         System.out.println(Arshjit);
                         choice=z.nextInt();
                     }
-                    desposit=0;
+                    deposit=0;
                     break;
                     
                 case 3:
@@ -122,15 +122,15 @@ public class Main
                 
                 case 5:
                     if(account==1){
-                        System.out.println(uzair.getMoney());
+                        System.out.println("Money in Bank: "+ uzair.getMoney());
                         choice=z.nextInt();
                     }
                     if(account==2){
-                        System.out.println(Dharmin.getMoney());
+                        System.out.println("Money in Bank: "+ Dharmin.getMoney());
                         choice=z.nextInt();
                     }
                     if(account==3){
-                        System.out.println(Arshjit.getMoney());
+                        System.out.println("Money in Bank: "+ Arshjit.getMoney());
                         choice=z.nextInt();
                     }
                     System.out.println(Arshjit);
@@ -148,7 +148,7 @@ class Account {
 	
     private String password;	
     private int total;
-    private int desposit;
+    private int deposit;
     
     public Account(String password,int money){
         
@@ -169,7 +169,7 @@ class Account {
                  
          + "\nPlease select one of the options below "	 
 		 + "\nPress (1) to  Switch Accounts"
-		 + "\nPress (2) to Desposit"
+		 + "\nPress (2) to Deposit"
          +"\nPress (3) Transfer"  
 		 + "\nPress (4) to  Wtihdraw" 
 		 +"\nPress (5) to Print balance"

@@ -34,17 +34,17 @@ public class Main
                     while(account>3 || account<0){
                         System.out.println("Enter the password");
                         inpassword=z.nextLine();
-                        if(inpassword.equals("Password")){
+                        if(inpassword.equals(uzair.getPassWord())){
                             account=1;
                         }
-                        if(inpassword.equals("Password2")){
+                        if(inpassword.equals(Dharmin.getPassWord())){
                             account=2;
                         }
-                        if(inpassword.equals("Password3")){
+                        if(inpassword.equals(Arshjit.getPassWord())){
                             account=3;
                         }
                     }
-                    System.out.println(options);
+                    System.out.println(Arshjit);
                     choice=z.nextInt();
                     break;
                 
@@ -57,7 +57,7 @@ public class Main
                         uzair.setMoney((desposit + uzair.getMoney()));
                         total = uzair.getMoney();
                         System.out.println("Money in bank " +total);
-                        System.out.println(options);
+                        System.out.println(Arshjit);
                         choice=z.nextInt();
                     }
                     if(account==2){
@@ -66,7 +66,7 @@ public class Main
                         Dharmin.setMoney((desposit + Dharmin.getMoney()));
                         total2 = Dharmin.getMoney();
                         System.out.println("Money in bank " +total2);
-                        System.out.println(options);
+                        System.out.println(Arshjit);
                         choice=z.nextInt();
                     }
                     if(account==3){
@@ -75,7 +75,7 @@ public class Main
                         Arshjit.setMoney((desposit + Arshjit.getMoney()));
                         total2 = Arshjit.getMoney();
                         System.out.println("Money in bank " +total3);
-                        System.out.println(options);
+                        System.out.println(Arshjit);
                         choice=z.nextInt();
                     }
                     desposit=0;
@@ -114,7 +114,7 @@ public class Main
                         System.out.println("Invalid");
                     }
                     transfer=0;
-                    System.out.println(options);
+                    System.out.println(Arshjit);
                     choice=z.nextInt();
                     
                     break;
@@ -123,19 +123,17 @@ public class Main
                 case 5:
                     if(account==1){
                         System.out.println(uzair.getMoney());
-                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     if(account==2){
                         System.out.println(Dharmin.getMoney());
-                        System.out.println(options);
                         choice=z.nextInt();
                     }
                     if(account==3){
                         System.out.println(Arshjit.getMoney());
-                        System.out.println(options);
                         choice=z.nextInt();
                     }
+                    System.out.println(Arshjit);
                     break;
                
                 case 6:
@@ -166,15 +164,15 @@ class Account {
     public String getPassWord(){
         return password;
     }
-    
-    public String toString(){
+      public String toString(){
         return "*********************************************" 
                  
-                 + "\nPlease select one of the options below "	 
-		 + "\nPress (1) to  deposit"
-		 + "\nPress (2) to transfer money"
-          	 +"\nPress (3) to withdraw"  
-		 + "\nPress (4) to  print balance" 
-		 +"\nPress (5) to switch accounts"
-		 +"\nPress (6) to exit";
+         + "\nPlease select one of the options below "	 
+		 + "\nPress (1) to  Switch Accounts"
+		 + "\nPress (2) to Desposit"
+         +"\nPress (3) Transfer"  
+		 + "\nPress (4) to  Wtihdraw" 
+		 +"\nPress (5) to Print balance"
+		 +"\nPress (6) to Exit";
+      }
 }

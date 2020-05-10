@@ -49,7 +49,7 @@ public static void main(String[] args) {
                     
         if(account==1){
                         
-        System.out.println("Enter amount to desposit");
+        System.out.println("Enter the amount to desposit");
         desposit=z.nextInt();
         Uzair.setMoney((desposit + Uzair.getMoney()));
         total = Uzair.getMoney();
@@ -59,7 +59,7 @@ public static void main(String[] args) {
         }
             
 	if(account==2){
-	System.out.println("Enter amount to desposit");
+	System.out.println("Enter the amount to desposit");
         desposit=z.nextInt();
         Dharmin.setMoney((desposit + Dharmin.getMoney()));
         total2 = Dharmin.getMoney();
@@ -69,7 +69,7 @@ public static void main(String[] args) {
         }
         
 	if(account==3){
-        System.out.println("Enter amount to desposit");
+        System.out.println("Enter the amount to desposit");
         desposit=z.nextInt();
         Arshjit.setMoney((desposit + Arshjit.getMoney()));
         total2 = Arshjit.getMoney();
@@ -81,9 +81,10 @@ public static void main(String[] args) {
         break;
                     
         case 2:
-        System.out.println("Which account would you like to transfer too");
+			
+        System.out.println("Which account would you like to transfer to?");
         accounttotransfer=z.nextInt();
-        System.out.println("How much would you like to transfer");
+        System.out.println("How much would you like to transfer?");
         transfer=z.nextInt();
         if(account==1 && accounttotransfer==2 && Uzair.getMoney()>=transfer){
         Uzair.setMoney((Uzair.getMoney()-transfer));
@@ -144,12 +145,19 @@ public static void main(String[] args) {
         break;
 		
 	case 4:
-	break;
+			
+	System.out.println("How much would like to withdraw?");
+        withdraw = z.nextInt();
+        int balance = Uzair.getMoney() - withdraw;
+        System.out.println("Your new balance is " +balance);
+	System.out.println(Arshjit);
+        choice=z.nextInt();
+		break;		
 		
 	case 5:
-    	
-	account=-1;
-        
+			
+    	account=-1;
+			
 	while(account>3 || account<0){
         System.out.println("\nPlease select an account");
 	System.out.println("\n(1)Uzair \n(2)Dharmin \n(3)Arshjit" );

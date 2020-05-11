@@ -25,7 +25,7 @@ public static void main(String[] args) {
         int total2=0;
         int total3=0;
         int choice=1;
-        int desposit;
+        int deposit;
         int withdraw;
         int accounttotransfer;
         int transfer;
@@ -62,7 +62,7 @@ public static void main(String[] args) {
         if(account==1){
                         
         System.out.println("Enter the amount to desposit");
-        desposit=z.nextInt();
+        deposit=z.nextInt();
         Uzair.setMoney((desposit + Uzair.getMoney()));
         total = Uzair.getMoney();
         System.out.println("Money in bank " +total);
@@ -72,7 +72,7 @@ public static void main(String[] args) {
             
 	if(account==2){
 	System.out.println("Enter the amount to desposit");
-        desposit=z.nextInt();
+        deposit=z.nextInt();
         Dharmin.setMoney((desposit + Dharmin.getMoney()));
         total2 = Dharmin.getMoney();
         System.out.println("Money in bank " +total2);
@@ -82,7 +82,7 @@ public static void main(String[] args) {
         
 	if(account==3){
         System.out.println("Enter the amount to desposit");
-        desposit=z.nextInt();
+        deposit=z.nextInt();
         Arshjit.setMoney((desposit + Arshjit.getMoney()));
         total2 = Arshjit.getMoney();
         System.out.println("Money in bank " +total3);

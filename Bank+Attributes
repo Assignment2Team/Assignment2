@@ -121,7 +121,7 @@ public class Main
                 case 4:
                     System.out.println("How much would you like to withdraw");
                     withdraw=z.nextDouble();
-                    while(withdraw!=0){
+                    while(withdraw>0){
                         while(withdraw>=100){
                             withdraw=withdraw-100;
                             hundred++;

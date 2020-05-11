@@ -7,7 +7,7 @@ public class Main
 	    Scanner z= new Scanner(System.in);
 	    
 	    
-	    Account uzair = new Account("Ahmed", 10.00);
+	    Account uzair = new Account("Ahmed", 100.00);
 	    Account Dharmin = new Account("Dharmin",0.00);
 	    Account Arshjit = new Account("Arshjit",-10.00);
 	    
@@ -16,7 +16,7 @@ public class Main
 	    System.out.println(uzair.toString());
 	    System.out.println(uzair.equals(Arshjit));
 	    
-	    int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;int two=0;int one=0; int quarter=0; int dime=0;int nickle=0;int penny=0;
+	    int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;
 	    int inaccount;
 	    int account=-1;
 	    double total=0;
@@ -27,6 +27,7 @@ public class Main
 	    double withdraw;
 	    int accounttotransfer;
 	    double transfer;
+	    double amountwithdrawn;
 	    String inpassword="";
 	    String formatted="";
 
@@ -119,9 +120,10 @@ public class Main
                     
                     break;
                 case 4:
-                    System.out.println("How much would you like to withdraw");
+                    System.out.println("How much would you like to withdraw Between 20-1000");
                     withdraw=z.nextDouble();
-                    while(withdraw>0){
+                    amountwithdrawn=withdraw;
+                    while(withdraw>=20 && withdraw<=1000){
                         while(withdraw>=100){
                             withdraw=withdraw-100;
                             hundred++;
@@ -142,45 +144,29 @@ public class Main
                             withdraw=withdraw-5;
                             five++;
                         }
-                        while(withdraw>=2){
-                            withdraw=withdraw-2;
-                            two++;
-                        }
-                        while(withdraw>=1){
-                            withdraw=withdraw-1;
-                            one++;
-                        }
-                        while(withdraw>=0.25){
-                            withdraw=withdraw-0.25;
-                            quarter++;
-                        }
-                        while(withdraw>=0.1){
-                            withdraw=withdraw-0.1;
-                            dime++;
-                        }
-                        while(withdraw>=0.05){
-                            withdraw=withdraw-0.05;
-                            nickle++;
-                        }
-                        while(withdraw>=0.01){
-                            withdraw=withdraw-0.01;
-                            penny++;
-                        }
                     }
-                     System.out.println("Hundreds: "+ hundred+" Fifties: "+ fifty+" Twenties: "+ twenty+" Tens: "+ ten+" Fives: "+five+" Twos: "+ two+" Ones: "+ one+" Quarters: "+ quarter+" Dimes: "+ dime+" Nickels"+ nickle+" Pennies: "+penny);
-                        withdraw=(hundred*100)+(fifty*50)+(twenty*20)+(ten*10)+(five*5)+(two*2)+(one)+(quarter*0.25)+(dime*0.1)+(nickle*0.05)+(penny*0.01);
-                        if(account==1){
-                            uzair.setMoney((uzair.getMoney()-withdraw));
+                     System.out.println("Hundreds: "+ hundred+" Fifties: "+ fifty+" Twenties: "+ twenty+" Tens: "+ ten+" Fives: "+five);
+                     withdraw=(hundred*100)+(fifty*50)+(twenty*20)+(ten*10)+(five*5);
+                        if(withdraw%5!=0){
+                            System.out.println("Invalid");
+                            amountwithdrawn=0;
+                            choice=z.nextInt();
+                        }
+                        if(account==1 && amountwithdrawn<=uzair.getMoney()){
+                            uzair.setMoney((uzair.getMoney()-amountwithdrawn));
                             System.out.println("New Balance: "+ uzair.getMoney());
                         }
-                        if(account==2){
-                            Dharmin.setMoney((Dharmin.getMoney()-withdraw));
+                        if(account==2 && amountwithdrawn<=Dharmin.getMoney()){
+                            
+                            Dharmin.setMoney((Dharmin.getMoney()-amountwithdrawn));
                             System.out.println("New Balance: "+ Dharmin.getMoney());
                         }
-                        if(account==3){
-                            Arshjit.setMoney((Arshjit.getMoney()-withdraw));
+                        if(account==3 && amountwithdrawn<=Arshjit.getMoney()){
+                            Arshjit.setMoney((Arshjit.getMoney()-amountwithdrawn));
                             System.out.println("New Balance: "+ Arshjit.getMoney());
                         }
+                        withdraw=0;hundred=0;fifty=0;twenty=0;ten=0;five=0;
+                        choice=z.nextInt();
                         break;
                     
                 case 5:

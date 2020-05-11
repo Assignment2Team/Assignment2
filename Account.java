@@ -1,4 +1,15 @@
-import java.util.*;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Atm;
+
+/**
+ *
+ * @author Uzair
+ */
+
 
 public class Account {
 	
@@ -7,7 +18,7 @@ public class Account {
     private int deposit;
     private int withdraw;
     
-    public Accounts (String password,int money){
+    public Account (String password,int money){
         
         this.password = password;
 	this.money = money;
@@ -19,7 +30,7 @@ public class Account {
 		
 	
     public void setMoney(int newMoney){
-      mnoey = newMoney;
+      money = newMoney;
     }
 	
     

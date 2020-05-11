@@ -12,7 +12,7 @@ import java.util.Scanner;
  *
  * @author Uzair, Dharmin and Arsjit
  */
-public class Atm {
+public class Mainatm {
 public static void main(String[] args) {
 	       
 	Account Uzair = new Account("Ahmed", 1000);
@@ -32,8 +32,9 @@ public static void main(String[] args) {
 	String inpassword="";
 	   
         Scanner z= new Scanner(System.in);
-               
-        System.out.println("Please enter your password ");
+        
+        System.out.println("*********Welcome to UBL bank********");
+        System.out.println("\nPlease enter your password ");
         String password = z.next();
 
         if (password.equals(Uzair.getPassWord())) {
@@ -61,9 +62,9 @@ public static void main(String[] args) {
                     
         if(account==1){
                         
-        System.out.println("Enter the amount to desposit");
+        System.out.println("Enter the amount to deposit");
         deposit=z.nextInt();
-        Uzair.setMoney((desposit + Uzair.getMoney()));
+        Uzair.setMoney((deposit + Uzair.getMoney()));
         total = Uzair.getMoney();
         System.out.println("Money in bank " +total);
         System.out.println(Uzair);
@@ -71,9 +72,9 @@ public static void main(String[] args) {
         }
             
 	if(account==2){
-	System.out.println("Enter the amount to desposit");
+	System.out.println("Enter the amount to deposit");
         deposit=z.nextInt();
-        Dharmin.setMoney((desposit + Dharmin.getMoney()));
+        Dharmin.setMoney((deposit + Dharmin.getMoney()));
         total2 = Dharmin.getMoney();
         System.out.println("Money in bank " +total2);
         System.out.println(Uzair);
@@ -81,15 +82,15 @@ public static void main(String[] args) {
         }
         
 	if(account==3){
-        System.out.println("Enter the amount to desposit");
+        System.out.println("Enter the amount to deposit");
         deposit=z.nextInt();
-        Arshjit.setMoney((desposit + Arshjit.getMoney()));
+        Arshjit.setMoney((deposit + Arshjit.getMoney()));
         total2 = Arshjit.getMoney();
         System.out.println("Money in bank " +total3);
         System.out.println(Uzair);
         choice=z.nextInt();
         }
-        //desposit=0;
+        deposit=0;
         break;
                     
         case 2:

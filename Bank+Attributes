@@ -1,4 +1,5 @@
 import java.util.*;
+import java.text.DecimalFormat;
 public class Main
 {
 	public static void main(String[] args) {
@@ -6,25 +7,27 @@ public class Main
 	    Scanner z= new Scanner(System.in);
 	    
 	    
-	    Account uzair = new Account("Ahmed", 10);
-	    Account Dharmin = new Account("Dharmin",0);
-	    Account Arshjit = new Account("Arshjit",-10);
+	    Account uzair = new Account("Ahmed", 10.00);
+	    Account Dharmin = new Account("Dharmin",0.00);
+	    Account Arshjit = new Account("Arshjit",-10.00);
+	    
+	    DecimalFormat df = new DecimalFormat("#.##");
 	    
 	    System.out.println(uzair.toString());
 	    System.out.println(uzair.equals(Arshjit));
 	    
 	    int inaccount;
 	    int account=-1;
-	    int total=0;
-	    int total2=0;
-	    int total3=0;
+	    double total=0;
+	    double total2=0;
+	    double total3=0;
 	    int choice=1;
-	    int deposit;
-	    int withdraw;
+	    double deposit;
+	    double withdraw;
 	    int accounttotransfer;
-	    int transfer;
+	    double transfer;
 	    String inpassword="";
-	    String options= "1 switch accounts, 2 deposit, 3 transfer, 4 withdraw, 5 print balance, 6 to exit";
+	    String formatted="";
 
         do{
             switch(choice){
@@ -53,31 +56,27 @@ public class Main
                     if(account==1){
                         
                         System.out.println("Enter amount to deposit");
-                        deposit=z.nextInt();
+                        deposit=z.nextDouble();
                         uzair.setMoney((deposit + uzair.getMoney()));
                         total = uzair.getMoney();
                         System.out.println("Money in bank " +total);
-                        System.out.println(Arshjit);
-                        choice=z.nextInt();
                     }
                     if(account==2){
                         System.out.println("Enter amount to deposit");
-                        deposit=z.nextInt();
+                        deposit=z.nextDouble();
                         Dharmin.setMoney((deposit + Dharmin.getMoney()));
                         total2 = Dharmin.getMoney();
                         System.out.println("Money in bank " +total2);
-                        System.out.println(Arshjit);
-                        choice=z.nextInt();
                     }
                     if(account==3){
                         System.out.println("Enter amount to deposit");
-                        deposit=z.nextInt();
+                        deposit=z.nextDouble();
                         Arshjit.setMoney((deposit + Arshjit.getMoney()));
                         total2 = Arshjit.getMoney();
                         System.out.println("Money in bank " +total3);
-                        System.out.println(Arshjit);
-                        choice=z.nextInt();
                     }
+                    System.out.println(Arshjit);
+                    choice=z.nextInt();
                     deposit=0;
                     break;
                     
@@ -85,30 +84,30 @@ public class Main
                     System.out.println("Which account would you like to transfer too");
                     accounttotransfer=z.nextInt();
                     System.out.println("How much would you like to transfer");
-                    transfer=z.nextInt();
-                    if(account==1 && accounttotransfer==2 && uzair.getMoney()>=transfer){
+                    transfer=z.nextDouble();
+                    if(account==1 && accounttotransfer==2 && uzair.getMoney()>=transfer && transfer>=0){
                         uzair.setMoney((uzair.getMoney()-transfer));
                         Dharmin.setMoney((Dharmin.getMoney()+transfer));
                     }
-                    if(account==1 && accounttotransfer==3 && uzair.getMoney()>=transfer){
-                        total=total-transfer;
-                        total3=total3+transfer;
+                    if(account==1 && accounttotransfer==3 && uzair.getMoney()>=transfer && transfer>0){
+                        uzair.setMoney((uzair.getMoney()-transfer));
+                        Arshjit.setMoney((Arshjit.getMoney()+transfer));
                     }
-                    if(account==2 && accounttotransfer==1 && Dharmin.getMoney()>=transfer){
-                        total2=total2-transfer;
-                        total=total+transfer;
+                    if(account==2 && accounttotransfer==1 && Dharmin.getMoney()>=transfer && transfer>0){
+                        Dharmin.setMoney((Dharmin.getMoney()-transfer));
+                        uzair.setMoney((uzair.getMoney()+transfer));
                     }
-                    if(account==2 && accounttotransfer==3 && Dharmin.getMoney()>=transfer){
-                        total2=total2-transfer;
-                        total3=total3+transfer;
+                    if(account==2 && accounttotransfer==3 && Dharmin.getMoney()>=transfer && transfer>0){
+                        Dharmin.setMoney((Dharmin.getMoney()-transfer));
+                        Arshjit.setMoney((Arshjit.getMoney()+transfer));
                     }
-                    if(account==3 && accounttotransfer==1 && Arshjit.getMoney()>=transfer){
-                        total3=total3-transfer;
-                        total=total+transfer;
+                    if(account==3 && accounttotransfer==1 && Arshjit.getMoney()>=transfer && transfer>0){
+                        Arshjit.setMoney((Arshjit.getMoney()-transfer));
+                        uzair.setMoney((uzair.getMoney()+transfer));
                     }
-                    if(account==3 && accounttotransfer==2 && Arshjit.getMoney()>=transfer){
-                        total3=total3-transfer;
-                        total2=total2+transfer;
+                    if(account==3 && accounttotransfer==2 && Arshjit.getMoney()>=transfer && transfer>0){
+                        Arshjit.setMoney((Arshjit.getMoney()-transfer));
+                        Dharmin.setMoney((Dharmin.getMoney()+transfer));
                     }
                     else{
                         System.out.println("Invalid");
@@ -147,18 +146,18 @@ public class Main
 class Account {
 	
     private String password;	
-    private int total;
-    private int deposit;
+    private double total;
+    private double deposit;
     
-    public Account(String password,int money){
+    public Account(String password,double money){
         
         this.password = password;
 	    this.total = money;
     }
-    public int getMoney(){
+    public double getMoney(){
         return total;
     }
-    public void setMoney(int newMoney){
+    public void setMoney(double newMoney){
       total= newMoney;
     }
     public String getPassWord(){
@@ -169,9 +168,9 @@ class Account {
                  
          + "\nPlease select one of the options below "	 
 		 + "\nPress (1) to  Switch Accounts"
-		 + "\nPress (2) to Deposit"
-         +"\nPress (3) Transfer"  
-		 + "\nPress (4) to  Wtihdraw" 
+		 + "\nPress (2) to Deposit (2 decimal places)"
+         +"\nPress (3) Transfer (2 decimal places)"  
+		 + "\nPress (4) to  Wtihdraw (2 decimal places)" 
 		 +"\nPress (5) to Print balance"
 		 +"\nPress (6) to Exit";
       }

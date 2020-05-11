@@ -16,6 +16,7 @@ public class Main
 	    System.out.println(uzair.toString());
 	    System.out.println(uzair.equals(Arshjit));
 	    
+	    int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;int two=0;int one=0; int quarter=0; int dime=0;int nickle=0;int penny=0;
 	    int inaccount;
 	    int account=-1;
 	    double total=0;
@@ -118,7 +119,70 @@ public class Main
                     
                     break;
                 case 4:
-                
+                    System.out.println("How much would you like to withdraw");
+                    withdraw=z.nextDouble();
+                    while(withdraw!=0){
+                        while(withdraw>=100){
+                            withdraw=withdraw-100;
+                            hundred++;
+                        }
+                        while(withdraw>=50){
+                            withdraw=withdraw-50;
+                            fifty++;
+                        }
+                        while(withdraw>=20){
+                            withdraw=withdraw-20;
+                            twenty++;
+                        }
+                        while(withdraw>=10){
+                            withdraw=withdraw-10;
+                            ten++;
+                        }
+                        while(withdraw>=5){
+                            withdraw=withdraw-5;
+                            five++;
+                        }
+                        while(withdraw>=2){
+                            withdraw=withdraw-2;
+                            two++;
+                        }
+                        while(withdraw>=1){
+                            withdraw=withdraw-1;
+                            one++;
+                        }
+                        while(withdraw>=0.25){
+                            withdraw=withdraw-0.25;
+                            quarter++;
+                        }
+                        while(withdraw>=0.1){
+                            withdraw=withdraw-0.1;
+                            dime++;
+                        }
+                        while(withdraw>=0.05){
+                            withdraw=withdraw-0.05;
+                            nickle++;
+                        }
+                        while(withdraw>=0.01){
+                            withdraw=withdraw-0.01;
+                            penny++;
+                        }
+                    }
+                     System.out.println("Hundreds: "+ hundred+" Fifties: "+ fifty+" Twenties: "+ twenty+" Tens: "+ ten+" Fives: "+five+" Twos: "+ two+" Ones: "+ one+" Quarters: "+ quarter+" Dimes: "+ dime+" Nickels"+ nickle+" Pennies: "+penny);
+                        withdraw=(hundred*100)+(fifty*50)+(twenty*20)+(ten*10)+(five*5)+(two*2)+(one)+(quarter*0.25)+(dime*0.1)+(nickle*0.05)+(penny*0.01);
+                        if(account==1){
+                            uzair.setMoney((uzair.getMoney()-withdraw));
+                            System.out.println("New Balance: "+ uzair.getMoney());
+                        }
+                        if(account==2){
+                            Dharmin.setMoney((Dharmin.getMoney()-withdraw));
+                            System.out.println("New Balance: "+ Dharmin.getMoney());
+                        }
+                        if(account==3){
+                            Arshjit.setMoney((Arshjit.getMoney()-withdraw));
+                            System.out.println("New Balance: "+ Arshjit.getMoney());
+                        }
+                        break;
+                    
                 case 5:
                     if(account==1){
                         System.out.println("Money in Bank: "+ uzair.getMoney());
@@ -170,7 +234,7 @@ class Account {
 		 + "\nPress (1) to  Switch Accounts"
 		 + "\nPress (2) to Deposit (2 decimal places)"
          +"\nPress (3) Transfer (2 decimal places)"  
-		 + "\nPress (4) to  Wtihdraw (2 decimal places)" 
+		 + "\nPress (4) to  Withdraw (2 decimal places)" 
 		 +"\nPress (5) to Print balance"
 		 +"\nPress (6) to Exit";
       }

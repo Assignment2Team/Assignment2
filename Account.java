@@ -10,47 +10,35 @@ package Atm;
  * @author Uzair
  */
 
-
-public class Account {
+class Account {
 	
     private String password;	
-    private int money;
-    private int deposit;
-    private int withdraw;
+    private double total;
+    private double deposit;
     
-    public Account (String password,int money){
+    public Account(String password,double money){
         
         this.password = password;
-	this.money = money;
+	    this.total = money;
     }
-      
-    public int getMoney(){
-        return money;
+    public double getMoney(){
+        return total;
     }
-		
-	
-    public void setMoney(int newMoney){
-      money = newMoney;
+    public void setMoney(double newMoney){
+      total= newMoney;
     }
-	
-    
     public String getPassWord(){
         return password;
     }
-           
-	        
-    @Override
-    public String toString(){
+      public String toString(){
         return "*********************************************" 
                  
-                 + "\nPlease select one of the options below "	 
-		 + "\nPress (1) to  deposit"
-		 + "\nPress (2) to transfer money"
-          	 +"\nPress (3) to withdraw"  
-		 + "\nPress (4) to  print balance" 
-		 +"\nPress (5) to switch accounts"
-		 +"\nPress (6) to exit";
-                 
-    }
-    
+         + "\nPlease select one of the options below "	 
+		 + "\nPress (1) to  Switch Accounts"
+		 + "\nPress (2) to Deposit (2 decimal places)"
+        	 +"\nPress (3) Transfer (2 decimal places)"  
+		 + "\nPress (4) to  Withdraw (2 decimal places)" 
+		 +"\nPress (5) to Print balance"
+		 +"\nPress (6) to Exit";
+      }
 }

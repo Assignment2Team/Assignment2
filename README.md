@@ -5,7 +5,10 @@ Description: This program functions as an ATM machine. It uses switch case insid
 where you could switch accounts,deposit,transfer to another account, withdraw, print balance and exit the loop.
 
 Class Main:
-This is the class that runs and performs the loop. 
+This is the class runs class Bank.
+
+Class Bank:
+This class has the loop and uses methods from other classes to get data.
 
 Class Account:
 This is the class that has getX() method which returns values that the main class uses. It also prints the options for the loop.

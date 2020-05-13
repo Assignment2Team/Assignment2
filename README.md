@@ -15,12 +15,12 @@ Challenge: The challenge is when the user withdraws money the atm should return 
 Division of Tasks:
 
 Dharmin:
-Dharmin wrote the Main class without using getX() Method. He had used the Account class from uzair to include getX() method later. Fixed Receipts.
+Dharmin wrote the Main class without using getX() Method. He had used the Account class from uzair and Receipt class from arshtjit tto include getX() method later. Fixed Receipts.
 
 Uzair:
 Uzair wrote the wrote the Account class and helped adapt the main method to include getX() method.
 
 Arsh:
-Arsh Fixed the Withdrawn method and worked on the challenge part of the problem.
+Arsh wrote the Receipt class and helped adapt the main to include the methods from Receipt class.
 
 Address of Repository: https://github.com/Assignment2Team/Assignment2/new/master

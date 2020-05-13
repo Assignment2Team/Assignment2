@@ -23,4 +23,4 @@ Uzair wrote the wrote the Account class and helped adapt the main method to incl
 Arsh:
 Arsh wrote the Receipt class and helped adapt the main to include the methods from Receipt class.
 
-Address of Repository: https://github.com/Assignment2Team/Assignment2/new/master
+Address of Repository: https://github.com/Assignment2Team/Assignment2

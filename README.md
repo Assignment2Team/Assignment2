@@ -7,7 +7,7 @@ This is the class that runs and preforms the loop.
 Class Account:
 This is the class that has getX() method which returns values that the main class uses. It also prints the options for the loop.
 
-Class Withdrawn:
+Class Receipts:
 This class returns the least amount of bills withdrawn. It also prints the amount.
 
 Challenge: The challenge is when the user withdraws money the atm should return the money using the least amount of bills.
@@ -15,7 +15,7 @@ Challenge: The challenge is when the user withdraws money the atm should return 
 Division of Tasks:
 
 Dharmin:
-Dharmin wrote the Main class without using getX() Method. He had used the Account class from uzair to include getX() method later.
+Dharmin wrote the Main class without using getX() Method. He had used the Account class from uzair to include getX() method later. Fixed Receipts.
 
 Uzair:
 Uzair wrote the wrote the Account class and helped adapt the main method to include getX() method.

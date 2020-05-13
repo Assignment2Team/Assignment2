@@ -1,227 +1,292 @@
 import java.util.*;
-import java.text.DecimalFormat;
-public class Main
-{
-	public static void main(String[] args) {
-	    
-	    Scanner z= new Scanner(System.in);
-	    
-	    
-	    Account uzair = new Account("Ahmed", 100.00);
-	    Account Dharmin = new Account("Dharmin",0.00);
-	    Account Arshjit = new Account("Arshjit",-10.00);
-	    
-	    DecimalFormat df = new DecimalFormat("#.##");
-	    
-	    System.out.println(uzair.toString());
-	    System.out.println(uzair.equals(Arshjit));
-	    
-	    int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;
-	    int inaccount;
-	    int account=-1;
-	    double total=0;
-	    double total2=0;
-	    double total3=0;
-	    int choice=1;
-	    double deposit;
-	    double withdraw;
-	    int accounttotransfer;
-	    double transfer;
-	    double amountwithdrawn;
-	    String inpassword="";
-	    String formatted="";
+import java.util.Arrays;
 
-        do{
-            switch(choice){
-	    	
-	    	 case 1:
-	    	        account=-1;
-                    while(account>3 || account<0){
-                        System.out.println("Enter the password");
-                        inpassword=z.nextLine();
-                        if(inpassword.equals(uzair.getPassWord())){
-                            account=1;
-                        }
-                        if(inpassword.equals(Dharmin.getPassWord())){
-                            account=2;
-                        }
-                        if(inpassword.equals(Arshjit.getPassWord())){
-                            account=3;
-                        }
-                    }
-                    System.out.println(Arshjit);
-                    choice=z.nextInt();
-                    break;
-                
-                case 2:
-                    
-                    if(account==1){
-                        
-                        System.out.println("Enter amount to deposit");
-                        deposit=z.nextDouble();
-                        uzair.setMoney((deposit + uzair.getMoney()));
-                        total = uzair.getMoney();
-                        System.out.println("Money in bank " +total);
-                    }
-                    if(account==2){
-                        System.out.println("Enter amount to deposit");
-                        deposit=z.nextDouble();
-                        Dharmin.setMoney((deposit + Dharmin.getMoney()));
-                        total2 = Dharmin.getMoney();
-                        System.out.println("Money in bank " +total2);
-                    }
-                    if(account==3){
-                        System.out.println("Enter amount to deposit");
-                        deposit=z.nextDouble();
-                        Arshjit.setMoney((deposit + Arshjit.getMoney()));
-                        total2 = Arshjit.getMoney();
-                        System.out.println("Money in bank " +total3);
-                    }
-                    System.out.println(Arshjit);
-                    choice=z.nextInt();
-                    deposit=0;
-                    break;
-                    
-                case 3:
-                    System.out.println("Which account would you like to transfer too");
-                    accounttotransfer=z.nextInt();
-                    System.out.println("How much would you like to transfer");
-                    transfer=z.nextDouble();
-                    if(account==1 && accounttotransfer==2 && uzair.getMoney()>=transfer && transfer>=0){
-                        uzair.setMoney((uzair.getMoney()-transfer));
-                        Dharmin.setMoney((Dharmin.getMoney()+transfer));
-                    }
-                    if(account==1 && accounttotransfer==3 && uzair.getMoney()>=transfer && transfer>0){
-                        uzair.setMoney((uzair.getMoney()-transfer));
-                        Arshjit.setMoney((Arshjit.getMoney()+transfer));
-                    }
-                    if(account==2 && accounttotransfer==1 && Dharmin.getMoney()>=transfer && transfer>0){
-                        Dharmin.setMoney((Dharmin.getMoney()-transfer));
-                        uzair.setMoney((uzair.getMoney()+transfer));
-                    }
-                    if(account==2 && accounttotransfer==3 && Dharmin.getMoney()>=transfer && transfer>0){
-                        Dharmin.setMoney((Dharmin.getMoney()-transfer));
-                        Arshjit.setMoney((Arshjit.getMoney()+transfer));
-                    }
-                    if(account==3 && accounttotransfer==1 && Arshjit.getMoney()>=transfer && transfer>0){
-                        Arshjit.setMoney((Arshjit.getMoney()-transfer));
-                        uzair.setMoney((uzair.getMoney()+transfer));
-                    }
-                    if(account==3 && accounttotransfer==2 && Arshjit.getMoney()>=transfer && transfer>0){
-                        Arshjit.setMoney((Arshjit.getMoney()-transfer));
-                        Dharmin.setMoney((Dharmin.getMoney()+transfer));
-                    }
-                    else{
-                        System.out.println("Invalid");
-                    }
-                    transfer=0;
-                    System.out.println(Arshjit);
-                    choice=z.nextInt();
-                    
-                    break;
-                case 4:
-                    System.out.println("How much would you like to withdraw Between 20-1000");
-                    withdraw=z.nextDouble();
-                    amountwithdrawn=withdraw;
-                    while(withdraw>=20 && withdraw<=1000){
-                        while(withdraw>=100){
-                            withdraw=withdraw-100;
-                            hundred++;
-                        }
-                        while(withdraw>=50){
-                            withdraw=withdraw-50;
-                            fifty++;
-                        }
-                        while(withdraw>=20){
-                            withdraw=withdraw-20;
-                            twenty++;
-                        }
-                        while(withdraw>=10){
-                            withdraw=withdraw-10;
-                            ten++;
-                        }
-                        while(withdraw>=5){
-                            withdraw=withdraw-5;
-                            five++;
-                        }
-                    }
-                     System.out.println("Hundreds: "+ hundred+" Fifties: "+ fifty+" Twenties: "+ twenty+" Tens: "+ ten+" Fives: "+five);
-                     withdraw=(hundred*100)+(fifty*50)+(twenty*20)+(ten*10)+(five*5);
-                        if(withdraw%5!=0){
-                            System.out.println("Invalid");
-                            amountwithdrawn=0;
-                            choice=z.nextInt();
-                        }
-                        if(account==1 && amountwithdrawn<=uzair.getMoney()){
-                            uzair.setMoney((uzair.getMoney()-amountwithdrawn));
-                            System.out.println("New Balance: "+ uzair.getMoney());
-                        }
-                        if(account==2 && amountwithdrawn<=Dharmin.getMoney()){
-                            
-                            Dharmin.setMoney((Dharmin.getMoney()-amountwithdrawn));
-                            System.out.println("New Balance: "+ Dharmin.getMoney());
-                        }
-                        if(account==3 && amountwithdrawn<=Arshjit.getMoney()){
-                            Arshjit.setMoney((Arshjit.getMoney()-amountwithdrawn));
-                            System.out.println("New Balance: "+ Arshjit.getMoney());
-                        }
-                        withdraw=0;hundred=0;fifty=0;twenty=0;ten=0;five=0;
-                        choice=z.nextInt();
-                        break;
-                    
-                case 5:
-                    if(account==1){
-                        System.out.println("Money in Bank: "+ uzair.getMoney());
-                        choice=z.nextInt();
-                    }
-                    if(account==2){
-                        System.out.println("Money in Bank: "+ Dharmin.getMoney());
-                        choice=z.nextInt();
-                    }
-                    if(account==3){
-                        System.out.println("Money in Bank: "+ Arshjit.getMoney());
-                        choice=z.nextInt();
-                    }
-                    System.out.println(Arshjit);
-                    break;
-               
-                case 6:
-                    System.exit(0);
-                    break;
-            }
+public class BankAttributes {
+  public static void main(String[] args) {
+
+    Scanner sc = new Scanner(System.in);
+
+    Account uzair = new Account("Uzair Lakhani",1234, 19034.59);
+    Account dharmin = new Account("Dharmin Patel",5678,53401.67);
+    Account arshjit = new Account("Arshjit Sansoe",9012,20670.34);
+
+    Receipts receipt = new Receipts("");
+
+    System.out.println("\n\t * ~ Welcome to the Bank of Vanier ~ *\n");
+
+    int[] myNum = {100,50,20,10,5};
+    int inaccount;
+    int hundred=0, fifty=0, twenty=0, ten=0, five=0;
+    int account=-1;
+    double total=0, total2=0, total3=0;
+    int choice=1;
+    double deposit;
+    double withdraw;
+    int accounttotransfer;
+    double transfer;
+    double amountwithdrawn;
+    int pinNumber;
+
+    do{
+      switch(choice){
+        case 1:
+        account=-1;
+        while(account>3 || account<0){
+          System.out.print("Enter your pin number: ");
+          pinNumber = sc.nextInt();
+          System.out.println("");
+          if(pinNumber == uzair.getPinNumber()){
+            account=1;
+            System.out.println("User's name: " +uzair.getUserName());
+          }
+          if(pinNumber == dharmin.getPinNumber()){
+            account=2;
+            System.out.println("User's name: " +dharmin.getUserName());
+          }
+          if(pinNumber == arshjit.getPinNumber()){
+            account=3;
+            System.out.println("User's name: " +arshjit.getUserName());
+          }
         }
-		while(true);
-	}
-}
-class Account {
-	
-    private String password;	
-    private double total;
-    private double deposit;
-    
-    public Account(String password,double money){
-        
-        this.password = password;
-	    this.total = money;
-    }
-    public double getMoney(){
-        return total;
-    }
-    public void setMoney(double newMoney){
-      total= newMoney;
-    }
-    public String getPassWord(){
-        return password;
-    }
-      public String toString(){
-        return "*********************************************" 
-                 
-         + "\nPlease select one of the options below "	 
-		 + "\nPress (1) to  Switch Accounts"
-		 + "\nPress (2) to Deposit (2 decimal places)"
-         +"\nPress (3) Transfer (2 decimal places)"  
-		 + "\nPress (4) to  Withdraw (2 decimal places)" 
-		 +"\nPress (5) to Print balance"
-		 +"\nPress (6) to Exit";
+        System.out.println(arshjit);
+        choice = sc.nextInt();
+        break;
+
+        case 2:
+        if(account==1){
+          System.out.print("Enter amount to deposit: ");
+          deposit = sc.nextDouble();
+          uzair.setMoney(deposit + uzair.getMoney());
+          total = uzair.getMoney();
+          System.out.println("Money in bank: " +total);
+          System.out.println();
+        }
+        if(account==2){
+          System.out.println("Enter amount to deposit");
+          deposit = sc.nextDouble();
+          dharmin.setMoney((deposit + dharmin.getMoney()));
+          total2 = dharmin.getMoney();
+          System.out.println("Money in bank " +total2);
+        }
+        if(account==3){
+          System.out.println("Enter amount to deposit");
+          deposit = sc.nextDouble();
+          arshjit.setMoney((deposit + arshjit.getMoney()));
+          total2 = arshjit.getMoney();
+          System.out.println("Money in bank " +total3);
+        }
+        System.out.println(arshjit);
+        choice = sc.nextInt();
+        deposit=0;
+        break;
+
+        case 3:
+        System.out.println("Which account would you like to transfer to?");
+        accounttotransfer = sc.nextInt();
+        System.out.println("How much would you like to transfer?");
+        transfer = sc.nextDouble();
+        if((transfer*100)%1!=0){
+          System.out.println("Invalid more than 2 decimals");
+          break;
+        }
+        if(accounttotransfer==account){
+          System.out.println("You can't transfer money into your own account");
+          break;
+        }
+        if(account==1 && accounttotransfer==2 && uzair.getMoney()>=transfer && transfer>=0){
+          uzair.setMoney((uzair.getMoney()-transfer));
+          dharmin.setMoney((dharmin.getMoney()+transfer));
+        }
+        if(account==1 && accounttotransfer==3 && uzair.getMoney()>=transfer && transfer>0){
+          uzair.setMoney((uzair.getMoney()-transfer));
+          arshjit.setMoney((arshjit.getMoney()+transfer));
+        }
+        if(account==2 && accounttotransfer==1 && dharmin.getMoney()>=transfer && transfer>0){
+          dharmin.setMoney((dharmin.getMoney()-transfer));
+          uzair.setMoney((uzair.getMoney()+transfer));
+        }
+        if(account==2 && accounttotransfer==3 && dharmin.getMoney()>=transfer && transfer>0){
+          dharmin.setMoney((dharmin.getMoney()-transfer));
+          arshjit.setMoney((arshjit.getMoney()+transfer));
+        }
+        if(account==3 && accounttotransfer==1 && arshjit.getMoney()>=transfer && transfer>0){
+          arshjit.setMoney((arshjit.getMoney()-transfer));
+          uzair.setMoney((uzair.getMoney()+transfer));
+        }
+        if(account==3 && accounttotransfer==2 && arshjit.getMoney()>=transfer && transfer>0){
+          arshjit.setMoney((arshjit.getMoney()-transfer));
+          dharmin.setMoney((dharmin.getMoney()+transfer));
+        }
+        System.out.println("\nYou have successfully have transfered the money");
+        transfer=0;
+        System.out.println(arshjit);
+        choice = sc.nextInt();
+        break;
+
+        case 4:
+          if(account==1){
+            System.out.println("Current Balance: "+ uzair.getMoney());
+          }
+          if(account==2){
+            System.out.println("Current Balance: "+ dharmin.getMoney());
+          }
+          if(account==3){
+            System.out.println("Current Balance: "+ arshjit.getMoney());
+          }
+          System.out.println("You could only withdraw between $20 to $1000.");
+          System.out.println("How much would you like to withdraw: ");
+          System.out.print("$");
+          withdraw = sc.nextDouble();
+          amountwithdrawn=withdraw;
+
+        while(withdraw>=20 && withdraw<=1000){
+          while(withdraw>=myNum[0]){
+            withdraw-=myNum[0];
+            hundred++;
+          }
+          while(withdraw>=myNum[1]){
+            withdraw-=myNum[1];
+            fifty++;
+          }
+          while(withdraw>=myNum[2]){
+            withdraw-=myNum[2];
+            twenty++;
+          }
+          while(withdraw>=myNum[3]){
+            withdraw-=myNum[3];
+            ten++;
+          }
+          while(withdraw>=myNum[4]){
+            withdraw-=myNum[4];
+            five++;
+          }
+          if (withdraw != 0) {
+            System.out.println("\n* ~ Warning, you have a small amount which will be transfered back into your account ~ *");
+          }
+          System.out.println("\n  ************************************");
+          System.out.println("         Hundred(s): " + hundred + " bill(s)" + "\n         Fiftie(s):  " + fifty + " bill(s)" + " \n         Twentie(s): " + twenty + " bill(s)" + " \n         Ten(s):     " + ten + " bill(s)" + " \n         Five(s):    " + five + " bill(s)");
+          System.out.println("  ************************************\n");
+          hundred=0;fifty=0;twenty=0;ten=0;five=0;
+          if (withdraw != 0) {
+            System.out.printf("Amount which will be put back into your account $%.2f. \n", withdraw);
+          }
+          if(account==1 && amountwithdrawn<=uzair.getMoney()){
+            uzair.setMoney((uzair.getMoney()-amountwithdrawn+withdraw));
+            System.out.println("New Balance: "+ uzair.getMoney());
+            System.out.println("");
+            withdraw=0;
+            System.out.println(arshjit);
+            choice = sc.nextInt();
+          }
+          if(account==2 && amountwithdrawn<=dharmin.getMoney()){
+            dharmin.setMoney((dharmin.getMoney()-amountwithdrawn+withdraw));
+            System.out.println("New Balance: "+ dharmin.getMoney());
+            System.out.println("");
+            withdraw=0;
+            System.out.println(arshjit);
+            choice = sc.nextInt();
+          }
+          if(account==3 && amountwithdrawn<=arshjit.getMoney()){
+            arshjit.setMoney((arshjit.getMoney()-amountwithdrawn+withdraw));
+            System.out.println("New Balance: "+ arshjit.getMoney());
+            System.out.println("");
+            withdraw=0;
+            System.out.println(arshjit);
+            choice = sc.nextInt();
+          }
+        }
+        while (withdraw<20 && withdraw>1000) {
+          System.out.println("Request can't be completed");
+          System.out.println(arshjit);
+          choice = sc.nextInt();
+        }
+        break;
+
+        case 5:
+        if(account==1){
+          System.out.println("Money in Bank: "+ uzair.getMoney());
+          choice = sc.nextInt();
+        }
+        if(account==2){
+          System.out.println("Money in Bank: "+ dharmin.getMoney());
+          choice = sc.nextInt();
+        }
+        if(account==3){
+          System.out.println("Money in Bank: "+ arshjit.getMoney());
+          choice = sc.nextInt();
+        }
+        System.out.println(arshjit);
+        break;
+
+        case 6:
+        System.exit(0);
+        break;
       }
+    } while(true);
+  }
+}
+
+class Account {
+  private int pinNumber;
+  private double total;
+  private double deposit;
+  private String userName;
+
+  public Account(String userName, int pinNumber, double money){
+    this.pinNumber = pinNumber;
+    this.total = money;
+    this.userName = userName;
+  }
+  public void setUserName(String userName){
+  }
+  public String getUserName(){
+    return userName;
+  }
+  public double getMoney(){
+    return total;
+  }
+  public void setMoney(double newMoney){
+    total= newMoney;
+  }
+  public int getPinNumber(){
+    return pinNumber;
+  }
+  public String toString(){
+    return "*********************************************"
+    + "\nPlease select one of the options below: "
+    + "\nPress (1) to  Switch Accounts"
+    + "\nPress (2) to Deposit (2 decimal places)"
+    +"\nPress (3) Transfer (2 decimal places)"
+    + "\nPress (4) to  Withdraw (2 decimal places)"
+    +"\nPress (5) to Print balance"
+    +"\nPress (6) to Exit";
+  }
+}
+
+class Receipts {
+  private int[] bills = {100,50,20,10,5};
+  private int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;
+  private String receipts;
+
+  public Receipts (String receipts){
+    this.receipts = receipts;
+  }
+  public String getReceipts(){
+    return receipts;
+  }
+  public String toString() {
+    return "*******************************************"
+    + "\n ***********>>>Vanier BANK<<<***********"
+    + "\n *----------Transaction  Receipt-----------"
+    + "\n*******************************************";
+  }
+  public String withdraw() {
+    return  "************************************"+
+    "\n*Hundred(s):           "+ hundred     +
+    "\n*Fiftie(s):           " + fifty      +
+    "\n*Twentie(s):  "        + twenty  +
+    "\n*Ten(s):        "      +ten  +
+    "\n*Five(s):        "    +five  +
+    "\n**********************************";
+  }
 }

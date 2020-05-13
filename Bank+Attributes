@@ -1,9 +1,21 @@
 import java.util.*;
-import java.util.Arrays;
+import java.time.LocalDate;
+/**
+ * @author Dharmin Patel,Uzair Lakhani, Arshjit Sansoe
+ * runs class Bank
+ * 
+*/
 
-public class Main {
-  public static void main(String[] args) {
-
+public class Main{
+    public static void main(String[] args){
+        Bank name= new Bank();
+        Bank.Vanier();
+    }
+}
+class Bank{
+  public static void Vanier(){
+        
+    LocalDate time= LocalDate.now();
     Scanner sc = new Scanner(System.in);
 
     Account uzair = new Account("Uzair Lakhani",1234, 19034.59);//Accounts uses account class
@@ -34,7 +46,6 @@ public class Main {
         while(account>3 || account<0){
           System.out.print("Enter your pin number: ");//Pin number is the second value of class account ex: 1234 for uzair
           pinNumber = sc.nextInt();
-          System.out.println("");
           if(pinNumber == uzair.getPinNumber()){
             account=1;
             System.out.println("User's name: " +uzair.getUserName());
@@ -54,6 +65,7 @@ public class Main {
 
         case 2:
           System.out.println("Enter amount to deposit");
+          System.out.print("$");
           deposit = sc.nextDouble();
         if(account==1){
           uzair.setMoney(deposit + uzair.getMoney());
@@ -120,17 +132,18 @@ public class Main {
 
         case 4:
           if(account==1){
-            System.out.println("Current Balance: "+ uzair.getMoney());
+            System.out.println("Current Balance: $ "+ uzair.getMoney());
           }
           if(account==2){
-            System.out.println("Current Balance: "+ dharmin.getMoney());
+            System.out.println("Current Balance: $ "+ dharmin.getMoney());
           }
           if(account==3){
-            System.out.println("Current Balance: "+ arshjit.getMoney());
+            System.out.println("Current Balance: $ "+ arshjit.getMoney());
           }
           System.out.println("You could only withdraw between $20 to $1000.");
           System.out.println("How much would you like to withdraw: ");
           System.out.print("$");
+          
           withdraw = sc.nextDouble();
           amountwithdrawn=withdraw;
 
@@ -159,56 +172,45 @@ public class Main {
             System.out.println("\n* ~ Warning, you have a small amount which will be transfered back into your account ~ *");
           }
           System.out.println(receipt.withdraw());//prints receipt
-          receipt.setHundreds(0);receipt.setFifty(0);receipt.setTwenty(0);receipt.setTen(0);receipt.setFive(0);//resets values to 0 for next withdraw
+          System.out.print(time);
           if (withdraw != 0) {
             System.out.printf("Amount which will be put back into your account $%.2f. \n", withdraw);
           }
           if(account==1 && amountwithdrawn<=uzair.getMoney()){
             uzair.setMoney((uzair.getMoney()-amountwithdrawn+withdraw));
-            System.out.println("New Balance: "+ uzair.getMoney());
-            System.out.println("");
-            withdraw=0;
-            System.out.println(arshjit);
-            choice = sc.nextInt();
+            System.out.println(" New Balance: "+ uzair.getMoney());
           }
           if(account==2 && amountwithdrawn<=dharmin.getMoney()){
             dharmin.setMoney((dharmin.getMoney()-amountwithdrawn+withdraw));
-            System.out.println("New Balance: "+ dharmin.getMoney());
-            System.out.println("");
-            withdraw=0;
-            System.out.println(arshjit);
-            choice = sc.nextInt();
+            System.out.println(" New Balance: "+ dharmin.getMoney());
           }
           if(account==3 && amountwithdrawn<=arshjit.getMoney()){
             arshjit.setMoney((arshjit.getMoney()-amountwithdrawn+withdraw));
-            System.out.println("New Balance: "+ arshjit.getMoney());
-            System.out.println("");
+            System.out.println(" New Balance: "+ arshjit.getMoney());
+          }
+            receipt.setHundreds(0);receipt.setFifty(0);receipt.setTwenty(0);receipt.setTen(0);receipt.setFive(0);//resets values to 0 for next withdraw
             withdraw=0;
             System.out.println(arshjit);
             choice = sc.nextInt();
-          }
         }
         break;
         
         case 5:
         if(account==1){
           System.out.println("Money in Bank: "+ uzair.getMoney());//Uses Account class and returns money
-          choice = sc.nextInt();
         }
         if(account==2){
           System.out.println("Money in Bank: "+ dharmin.getMoney());
-          choice = sc.nextInt();
         }
         if(account==3){
           System.out.println("Money in Bank: "+ arshjit.getMoney());
-          choice = sc.nextInt();
         }
         System.out.println(arshjit);
+        choice = sc.nextInt();
         break;
 
         case 6:
         System.exit(0);
-        break;
       }
     } while(true);
   }
@@ -252,9 +254,7 @@ class Account {
 }
 
 class Receipts {
-  private int[] bills = {100,50,20,10,5};
   private int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;
-  private String receipts;
 
   public Receipts (int hundred, int fifty, int twenty, int ten, int five){
     this.hundred=hundred;
@@ -296,10 +296,11 @@ class Receipts {
   public String withdraw() {
     return  "************************************"+
     "\n*Hundred(s):           "+ hundred     +
-    "\n*Fiftie(s):           " + fifty      +
-    "\n*Twentie(s):  "        + twenty  +
-    "\n*Ten(s):        "      +ten  +
-    "\n*Five(s):        "    +five  +
+    "\n*Fiftie(s):            "+ fifty       +
+    "\n*Twentie(s):           "+ twenty      +
+    "\n*Ten(s):               "+ ten         +
+    "\n*Five(s):              "+ five         +
     "\n**********************************";
   }
 }
+

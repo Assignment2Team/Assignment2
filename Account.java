@@ -6,7 +6,7 @@ package Atm;
  * 
  * @author Uzair Lakhani
  */
-class Accountfinal {
+class Account {
     
   //Creates attributes of an atm machine  
   private int pinNumber;
@@ -21,7 +21,7 @@ class Accountfinal {
      * @param pinNumber
      * @param money
      */
-  public Accountfinal(String userName, int pinNumber, double money){
+  public Account(String userName, int pinNumber, double money){
     this.pinNumber = pinNumber;
     this.total = money;
     this.userName = userName;

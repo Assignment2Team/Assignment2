@@ -172,21 +172,21 @@ class Bank{
             System.out.println("\n* ~ Warning, you have a small amount which will be transfered back into your account ~ *");
           }
           System.out.println(receipt.withdraw());//prints receipt
-          System.out.print(time);
+           System.out.print("Transaction time: "+time);
           if (withdraw != 0) {
             System.out.printf("Amount which will be put back into your account $%.2f. \n", withdraw);
           }
           if(account==1 && amountwithdrawn<=uzair.getMoney()){
             uzair.setMoney((uzair.getMoney()-amountwithdrawn+withdraw));
-            System.out.println(" New Balance: "+ uzair.getMoney());
+            System.out.println("\nNew Balance: "+ uzair.getMoney());
           }
           if(account==2 && amountwithdrawn<=dharmin.getMoney()){
             dharmin.setMoney((dharmin.getMoney()-amountwithdrawn+withdraw));
-            System.out.println(" New Balance: "+ dharmin.getMoney());
+            System.out.println("\nNew Balance: "+ dharmin.getMoney());
           }
           if(account==3 && amountwithdrawn<=arshjit.getMoney()){
             arshjit.setMoney((arshjit.getMoney()-amountwithdrawn+withdraw));
-            System.out.println(" New Balance: "+ arshjit.getMoney());
+            System.out.println("\nNew Balance: "+ arshjit.getMoney());
           }
             receipt.setHundreds(0);receipt.setFifty(0);receipt.setTwenty(0);receipt.setTen(0);receipt.setFive(0);//resets values to 0 for next withdraw
             withdraw=0;

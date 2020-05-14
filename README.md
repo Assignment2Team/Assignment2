@@ -4,7 +4,7 @@ Authors: Uzair Lakkhani,Dharmin patel and Arshjit Sansoe
 Description: This program functions as an ATM machine. It uses switch case inside a do/while loop. It manages three accounts
 where you could switch accounts,deposit,transfer to another account, withdraw, print balance and exit the loop.
 
-Class Main:
+Class AtmMachine:
 This is the class runs class Bank.
 
 Class Bank:

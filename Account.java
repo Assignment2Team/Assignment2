@@ -6,7 +6,7 @@ package Atm;
  * 
  * @author Uzair Lakhani
  */
-class Account {
+public class Account {
     
   //Creates attributes of an atm machine  
   private int pinNumber;

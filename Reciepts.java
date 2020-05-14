@@ -1,8 +1,10 @@
+package Atm;
+
 /**
  * This class will make receipts for the withdraw method.
  * @author Arshjit Sansoe
  */
-class Receipts {
+public class Receipts {
     private static int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;
 
     /**
@@ -12,7 +14,6 @@ class Receipts {
      * @param twenty - int twenty
      * @param ten - int ten
      * @param five - int five
-     * @return amount of withdrawn bills
      */
     public Receipts (int hundred, int fifty, int twenty, int ten, int five){
         this.hundred=hundred;
@@ -24,7 +25,6 @@ class Receipts {
 
     /**
      * @param receiptHundred - sets hundred bills value
-     * @return null
      */
     //setters set all the amount(s) of bills
     public void setHundreds(int receiptHundred){
@@ -33,7 +33,6 @@ class Receipts {
 
     /**
      * @param receiptFifty - sets fifty bills value
-     * @return null
      */
     public void setFifty(int receiptFifty){
         fifty=receiptFifty;
@@ -48,7 +47,6 @@ class Receipts {
 
     /**
      * @param receiptTen - sets ten bills value
-     * @return null
      */
     public void setTen(int receiptTen){
         ten=receiptTen;
@@ -56,7 +54,6 @@ class Receipts {
 
     /**
      * @param receiptFive - sets five bills value
-     * @return null
      */
     public void setFive(int receiptFive){
         five=receiptFive;

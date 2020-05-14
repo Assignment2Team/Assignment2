@@ -1,10 +1,13 @@
+package Atm;
+
 import java.util.*;
 import java.time.LocalDate;
+
 /** 
  * CHALLENGE: The withdraw case gives the least amount of bills needed to return the requested amount of money
  * class AtmMachine runs the class Bank
  * class Bank contains the switch case and do/while loop and uses data values from the classes Account and Receipts
- * class Account creates user acconts (String,int,int) it provides values for the bank class
+ * class Account creates user accounts (String,int,int) it provides values for the bank class
  * class Receipts allows prints a receipt when the user withdraws money
  *
  * @author Dharmin Patel,Uzair Lakhani, Arshjit Sansoe

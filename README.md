@@ -21,7 +21,7 @@ Challenge: The challenge is when the user withdraws money the atm should return 
 Division of Tasks:
 
 Dharmin:
-Dharmin wrote the Main class without using getX() Method. He had used the Account class from Uzair and Receipt class from Arshtjit tto include getX() method later. Fixed Receipts.
+Dharmin wrote the Main class without using getX() Method. He had used the Account class from Uzair and Receipt class from Arshtjit to include getX() method later. Fixed Receipts.
 
 Uzair:
 Uzair wrote the wrote the Account class and helped adapt the main method to include getX() method.

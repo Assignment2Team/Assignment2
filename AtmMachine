@@ -1,8 +1,8 @@
 import java.util.*;
 import java.time.LocalDate;
 /**
- * author Dharmin Patel,Uzair Lakhani, Arshjit Sansoe
- * CHALLENGE The withdraw case gives the least amount of bills needed to return the requested amount of money
+ * Authors: Dharmin Patel,Uzair Lakhani, Arshjit Sansoe
+ * CHALLENGE: The withdraw case gives the least amount of bills needed to return the requested amount of money
  * class AtmMachine runs the class Bank
  * class Bank contains the switch case and do/while loop and uses data values from the classes Account and Receipts
  * class Account creates user acconts (String,int,int) it provides values for the bank class
@@ -221,31 +221,72 @@ class Bank{
   }
 }
 
+
 class Account {
+    
+  //Creates attributes of an atm machine  
   private int pinNumber;
   private double total;
   private double deposit;
   private String userName;
-
+  
+    /**
+     * Constructor with parameters.
+     *
+     * @param username
+     * @param pinNumber
+     * @param money
+     */
   public Account(String userName, int pinNumber, double money){
     this.pinNumber = pinNumber;
     this.total = money;
     this.userName = userName;
   }
-  public void setUserName(String userName){
-  }
+
+    /**
+     * Returns the username.
+     *
+     * @return
+     */
+  
   public String getUserName(){
     return userName;
   }
+    /**
+     * Returns total amount.
+     *
+     * @return
+     */
   public double getMoney(){
     return total;
   }
-  public void setMoney(double newMoney){
-    total= newMoney;
-  }
+  
+     /**
+     * Returns the pinNumber.
+     *
+     * @return
+     */
+  
   public int getPinNumber(){
     return pinNumber;
   }
+  
+    /**
+     * Method to set total amount of money.
+     *
+     * @param newMoney
+     */
+  
+  public void setMoney(double newMoney){
+    total= newMoney;
+  }
+
+
+    /**
+    *toString method of account class to print options in the Main class
+    * @return
+     */
+    @Override  
   public String toString(){
     return "*********************************************"
     + "\nPlease select one of the options below: "

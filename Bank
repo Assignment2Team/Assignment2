@@ -132,7 +132,9 @@ class Bank{
           
           withdraw = sc.nextDouble();
           amountwithdrawn=withdraw;
-
+          
+          //CHALLENGE PART: Give money back with least amount of bills
+        
         while(withdraw>=20 && withdraw<=1000){
           while(withdraw>=bills[0]){
             withdraw-=bills[0];//Subtracts the first number of the array until it is less than it

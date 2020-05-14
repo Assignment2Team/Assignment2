@@ -1,7 +1,7 @@
 package Atm;
 
 /**
- * This class creates accounts the Main class.
+ * This class creates accounts for the Main class.
  * It also contains constructors and methods for the Main class.
  * 
  * @author Uzair Lakhani

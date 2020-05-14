@@ -1,12 +1,15 @@
 import java.util.*;
 import java.time.LocalDate;
 /**
- * @author Dharmin Patel,Uzair Lakhani, Arshjit Sansoe
- * runs class Bank
- * 
+ * author Dharmin Patel,Uzair Lakhani, Arshjit Sansoe
+ * CHALLENGE The withdraw case gives the least amount of bills needed to return the requested amount of money
+ * class AtmMachine runs the class Bank
+ * class Bank contains the switch case and do/while loop and uses data values from the classes Account and Receipts
+ * class Account creates user acconts (String,int,int) it provides values for the bank class
+ * class Receipts allows prints a receipt when the user withdraws money
 */
 
-public class AtmMachine{
+public class Main{
     public static void main(String[] args){
         Bank name= new Bank();
         Bank.Vanier();
@@ -256,7 +259,7 @@ class Account {
 }
 
 class Receipts {
-  private int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;
+  private static int hundred=0;int fifty=0;int twenty=0;int ten=0;int five=0;
 
   public Receipts (int hundred, int fifty, int twenty, int ten, int five){
     this.hundred=hundred;
@@ -305,4 +308,3 @@ class Receipts {
     "\n**********************************";
   }
 }
-
